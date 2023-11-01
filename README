@@ -1,0 +1,3 @@
+# Docker Test Repository
+
+This repository is created for the purpose of testing PHP, MySQL, Redis, Composer, Xdebug in Docker.
