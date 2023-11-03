@@ -4,10 +4,14 @@ services:
     image: nginx:latest
     ports:
       - "8000:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
   # php
   app:
     build: 
       dockerfile: './php/DockerFile'
+    volumes:
+      - ./app:/app
   #mysql
 
   #redis
