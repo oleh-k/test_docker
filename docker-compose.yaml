@@ -13,6 +13,20 @@ services:
     volumes:
       - ./app:/app
   #mysql
-
+  db:
+    image: mysql:8.0
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+      MYSQL_DATABASE: docker-php
   #redis
 
+
+volumes:
+  mysqldata: 
