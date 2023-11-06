@@ -25,6 +25,15 @@ class DatabaseConnection {
             die("Connection failed: " . $e->getMessage());
         }
     }
+
+    function getUsers() {
+        $stmt = $this->connection->prepare("SELECT * FROM users");
+        $stmt->execute();
+
+        return $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    }
+    
     public function close() {
         $this->connection = null;
     }
