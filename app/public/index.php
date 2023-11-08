@@ -8,15 +8,10 @@ $database = new DatabaseConnection();
 $database->connect();
 $users = $database->getUsers();
 
-echo '<table>';
-echo '<tr><th>name</th><th>desc</th></tr>';
 
-foreach ($users as $key => $user) {
+echo '<br><a href="/set_cache.php">set_cache >> </a>';
+echo '<br><a href="/clear_cache.php">clear_cache >> </a>';
+echo '<br><a href="/view_cache.php">view_cache >> </a>';
+echo '<hr>';
 
-    $name = $user['name'];
-    $desc = $user['desc'];
-
-    echo "<tr><td>$name</td><td>$desc</td></tr>";
-
-}
-echo '</tr>';
+include_once './view.php';
