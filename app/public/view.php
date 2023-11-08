@@ -1,14 +1,5 @@
 <?php
 
-require_once './DB.php';
-
-echo 'Hello World';
-
-$database = new DatabaseConnection();
-$database->connect();
-$users = $database->getUsers();
-
-
 echo '<table>';
 echo '<tr><th>name</th><th>desc</th></tr>';
 
@@ -21,5 +12,3 @@ foreach ($users as $key => $user) {
 
 }
 echo '</tr>';
-
-include_once './view.php';
